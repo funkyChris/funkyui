@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!--
+		Author Christophe Bouthier (christophe.bouthier@loria.fr) 
+		Date 20 October 2009
+	-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<artifactId>funkyui-master</artifactId>
+		<groupId>funkyui</groupId>
+		<version>0.0.1</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>funkyui</groupId>
+	<artifactId>funkyui-menu</artifactId>
+	<name>funkyui-menu</name>
+	<packaging>war</packaging>
+	<version>0.0.1</version>
+	<build>
+		<defaultGoal>package</defaultGoal>
+		<finalName>funkyui-menu</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>gwt-maven-plugin</artifactId>
+				<version>1.2-SNAPSHOT</version>
+				<executions>
+					<execution>
+						<configuration>
+							<generateDirectory>src/main/java</generateDirectory>
+							<warSourceDirectory>war</warSourceDirectory>
+							<webappDirectory>war</webappDirectory>
+							<disableCastChecking>true</disableCastChecking>
+							<disableClassMetadata>true</disableClassMetadata>
+							<inplace>true</inplace>
+							<!-- <style>DETAILED</style> -->
+						</configuration>
+						<goals>
+							<goal>generateAsync</goal>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1-beta-1</version>
+				<configuration>
+					<warSourceDirectory>war</warSourceDirectory>
+					<webXml>war/WEB-INF/web.xml</webXml>
+					<archive>
+						<manifestFile>war/META-INF/MANIFEST.MF</manifestFile>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-servlet</artifactId>
+			<version>${gwt.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-user</artifactId>
+			<version>${gwt.version}</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+</project>

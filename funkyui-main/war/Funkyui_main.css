@@ -1,0 +1,36 @@
+.wrapper {
+  width: 960px;
+  margin: 0 auto;
+}
+
+#branding {
+  background-color: #eee;
+  height: 150px;
+}
+
+#branding h1 {
+  padding: 80px 0 0 50px;
+  color: #777;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+#content {
+    background-color: #f3f3f3;
+}
+
+#menu {
+  float: left;
+  width: 400px;
+  height: 500px;
+}
+
+#component {
+  width: 560px;
+  height: 500px;
+}
+
+#siteinfo {
+  background-color: #eee;
+  height: 100px;
+}
